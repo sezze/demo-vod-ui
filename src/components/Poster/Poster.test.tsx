@@ -2,10 +2,26 @@ import React from "react";
 import { render } from "@testing-library/react";
 import useSources from "hooks/useSources";
 import Poster from "./Poster";
+import { ThemeProvider } from "styled-components";
+import darkTheme from "themes/darkTheme";
+import lightTheme from "themes/lightTheme";
 
 jest.mock("hooks/useSources");
 
 type MockedUseSource = jest.Mock<ReturnType<typeof useSources>>;
+
+const ThemedPoster = (
+  <ThemeProvider
+    theme={{
+      dark: darkTheme,
+      light: lightTheme,
+      current: lightTheme,
+      setTheme: () => {},
+    }}
+  >
+    <Poster width={64} height={128} />
+  </ThemeProvider>
+);
 
 describe("renders correctly", () => {
   test("without source", () => {
@@ -14,7 +30,7 @@ describe("renders correctly", () => {
       srcSet: undefined,
     });
 
-    render(<Poster width={64} height={128} />);
+    render(ThemedPoster);
   });
 
   test("with mocked source", () => {
@@ -23,7 +39,7 @@ describe("renders correctly", () => {
       srcSet: "/source-set",
     });
 
-    const { getByTestId } = render(<Poster height={128} width={64} />);
+    const { getByTestId } = render(ThemedPoster);
     const img = getByTestId("poster-image") as HTMLImageElement;
 
     expect(img.src).toContain("/source");
