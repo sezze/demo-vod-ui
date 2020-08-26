@@ -8,7 +8,6 @@ import { ThemeProvider } from "styled-components";
 import useConfiguration from "hooks/useConfiguration";
 import Theme from "types/Theme";
 import darkTheme from "themes/darkTheme";
-import ThemeObject from "types/ThemeObject";
 import lightTheme from "themes/lightTheme";
 
 const App: React.FC = () => {
