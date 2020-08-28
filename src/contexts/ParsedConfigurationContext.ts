@@ -1,5 +1,5 @@
-import React from "react";
-import ParsedConfiguration from "types/ParsedConfiguration";
+import React from 'react';
+import ParsedConfiguration from 'types/ParsedConfiguration';
 
 const ParsedConfigurationContext = React.createContext<
   ParsedConfiguration | undefined

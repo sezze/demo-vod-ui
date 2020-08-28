@@ -1,7 +1,7 @@
-import { useState, useContext, useEffect } from "react";
-import { getSources } from "util/imageUtil";
-import ImageConfigurationContext from "contexts/ParsedConfigurationContext";
-import SizeType from "types/SizeType";
+import { useState, useContext, useEffect } from 'react';
+import { getSources } from 'util/imageUtil';
+import ImageConfigurationContext from 'contexts/ParsedConfigurationContext';
+import SizeType from 'types/SizeType';
 
 const useSources = (width: number, sizeType: SizeType, path?: string) => {
   const [src, setSrc] = useState<string>();
@@ -33,15 +33,15 @@ const useSources = (width: number, sizeType: SizeType, path?: string) => {
 
   useEffect(() => {
     if (!path || !imageConfig || !sizes) return;
-    const { src, srcSet } = getSources(
+    const newSources = getSources(
       path,
       imageConfig.secureBaseUrl,
       sizes,
       width
     );
 
-    setSrc(src);
-    setSrcSet(srcSet);
+    setSrc(newSources.src);
+    setSrcSet(newSources.srcSet);
   }, [path, width, imageConfig, sizes]);
 
   return { src, srcSet };

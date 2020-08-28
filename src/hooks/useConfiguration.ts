@@ -1,7 +1,7 @@
-import moviedb from "api/moviedb";
-import { useEffect, useState } from "react";
-import ParsedConfiguration from "types/ParsedConfiguration";
-import { parseImageConfig } from "util/imageUtil";
+import moviedb from 'api/moviedb';
+import { useEffect, useState } from 'react';
+import ParsedConfiguration from 'types/ParsedConfiguration';
+import { parseImageConfig } from 'util/imageUtil';
 
 export default function useConfiguration() {
   const [imageConfig, setImageConfig] = useState<

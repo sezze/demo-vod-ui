@@ -1,12 +1,12 @@
-import React from "react";
-import { render } from "@testing-library/react";
-import useSources from "hooks/useSources";
-import Poster from "./Poster";
-import { ThemeProvider } from "styled-components";
-import darkTheme from "themes/darkTheme";
-import lightTheme from "themes/lightTheme";
+import React from 'react';
+import { render } from '@testing-library/react';
+import useSources from 'hooks/useSources';
+import { ThemeProvider } from 'styled-components';
+import darkTheme from 'themes/darkTheme';
+import lightTheme from 'themes/lightTheme';
+import Poster from './Poster';
 
-jest.mock("hooks/useSources");
+jest.mock('hooks/useSources');
 
 type MockedUseSource = jest.Mock<ReturnType<typeof useSources>>;
 
@@ -23,8 +23,8 @@ const ThemedPoster = (
   </ThemeProvider>
 );
 
-describe("renders correctly", () => {
-  test("without source", () => {
+describe('renders correctly', () => {
+  test('without source', () => {
     (useSources as MockedUseSource).mockReturnValue({
       src: undefined,
       srcSet: undefined,
@@ -33,16 +33,16 @@ describe("renders correctly", () => {
     render(ThemedPoster);
   });
 
-  test("with mocked source", () => {
+  test('with mocked source', () => {
     (useSources as MockedUseSource).mockReturnValue({
-      src: "/source",
-      srcSet: "/source-set",
+      src: '/source',
+      srcSet: '/source-set',
     });
 
     const { getByTestId } = render(ThemedPoster);
-    const img = getByTestId("poster-image") as HTMLImageElement;
+    const img = getByTestId('poster-image') as HTMLImageElement;
 
-    expect(img.src).toContain("/source");
-    expect(img.srcset).toContain("/source-set");
+    expect(img.src).toContain('/source');
+    expect(img.srcset).toContain('/source-set');
   });
 });

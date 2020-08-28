@@ -1,5 +1,5 @@
-import ThemeObject from "types/ThemeObject";
+import ThemeObject from 'types/ThemeObject';
 
-declare module "styled-components" {
+declare module 'styled-components' {
   interface DefaultTheme extends ThemeObject {}
 }

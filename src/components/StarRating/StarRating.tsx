@@ -1,5 +1,5 @@
-import React from "react";
-import { FaStar, FaStarHalf } from "react-icons/fa";
+import React from 'react';
+import { FaStar, FaStarHalf } from 'react-icons/fa';
 
 interface StarRatingProps {
   rating: number;
@@ -12,6 +12,7 @@ const StarRating: React.FC<StarRatingProps> = ({ rating }) => {
   return (
     <div data-testid="star-container">
       {[...Array(fullStarCount)].map((_, i) => (
+        // eslint-disable-next-line react/no-array-index-key
         <FaStar key={i} />
       ))}
       {hasHalfStar ? <FaStarHalf data-testid="half-star" /> : null}

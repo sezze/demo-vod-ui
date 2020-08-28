@@ -1,7 +1,7 @@
-import React from "react";
-import { Img, Wrapper } from "./styles";
-import useSources from "hooks/useSources";
-import SizeType from "types/SizeType";
+import React from 'react';
+import useSources from 'hooks/useSources';
+import SizeType from 'types/SizeType';
+import { Img, Wrapper } from './styles';
 
 interface PosterProps {
   path?: string;

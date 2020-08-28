@@ -1,14 +1,14 @@
-import React, { useCallback, useRef } from "react";
-import MovieListItem from "components/MovieListItem/MovieListItem";
-import { MovieResult } from "moviedb-promise/dist/request-types";
-import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
+import React, { useCallback, useRef } from 'react';
+import MovieListItem from 'components/MovieListItem/MovieListItem';
+import { MovieResult } from 'moviedb-promise/dist/request-types';
+import { FaCaretLeft, FaCaretRight } from 'react-icons/fa';
 import {
   Container,
   ChildContainer,
   ChildWrapper,
   ScrollSnapButton,
   ScrollContainer,
-} from "./styles";
+} from './styles';
 
 interface MovieListProps {
   movies?: MovieResult[];
@@ -20,7 +20,7 @@ const preloadFallback: undefined[] = [...Array(10)];
 function scroll(container: HTMLDivElement | null, multiplier: number) {
   if (container)
     container.scrollBy({
-      behavior: "smooth",
+      behavior: 'smooth',
       left: window.innerWidth * multiplier,
     });
 }
@@ -36,7 +36,7 @@ const MovieList: React.FC<MovieListProps> = ({ movies, label }) => {
     scroll(scrollContainer.current, 0.5);
   }, []);
 
-  let movieList: (MovieResult | undefined)[] = movies || preloadFallback;
+  const movieList: (MovieResult | undefined)[] = movies || preloadFallback;
 
   return (
     <Container>

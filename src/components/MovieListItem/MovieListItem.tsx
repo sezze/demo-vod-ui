@@ -1,10 +1,10 @@
-import React from "react";
-import { Container, Cover, CoverContent, Background } from "./styles";
-import Poster from "components/Poster/Poster";
-import { MovieResult } from "moviedb-promise/dist/request-types";
-import StarRating from "components/StarRating/StarRating";
-import { Link } from "react-router-dom";
-import slugify from "slugify";
+import React from 'react';
+import Poster from 'components/Poster/Poster';
+import { MovieResult } from 'moviedb-promise/dist/request-types';
+import StarRating from 'components/StarRating/StarRating';
+import { Link } from 'react-router-dom';
+import slugify from 'slugify';
+import { Container, Cover, CoverContent, Background } from './styles';
 
 interface MovieListItemProps {
   movie?: MovieResult;
@@ -12,7 +12,7 @@ interface MovieListItemProps {
 
 const MovieListItem: React.FC<MovieListItemProps> = ({ movie }) => {
   return (
-    <Link to={movie ? `/movie/${movie.id}/${slugify(movie.title || "")}` : "#"}>
+    <Link to={movie ? `/movie/${movie.id}/${slugify(movie.title || '')}` : '#'}>
       <Container>
         <Background>
           <Poster

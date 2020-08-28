@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import ImageConfigurationContext from "contexts/ParsedConfigurationContext";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import HomeView from "views/HomeView/HomeView";
-import StandardLayout from "layouts/StandardLayout/StandardLayout";
-import MovieView from "views/HomeView/MovieView";
-import { ThemeProvider } from "styled-components";
-import useConfiguration from "hooks/useConfiguration";
-import Theme from "types/Theme";
-import darkTheme from "themes/darkTheme";
-import lightTheme from "themes/lightTheme";
+import React, { useState } from 'react';
+import ImageConfigurationContext from 'contexts/ParsedConfigurationContext';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import HomeView from 'views/HomeView/HomeView';
+import StandardLayout from 'layouts/StandardLayout/StandardLayout';
+import MovieView from 'views/HomeView/MovieView';
+import { ThemeProvider } from 'styled-components';
+import useConfiguration from 'hooks/useConfiguration';
+import Theme from 'types/Theme';
+import darkTheme from 'themes/darkTheme';
+import lightTheme from 'themes/lightTheme';
 
 const App: React.FC = () => {
   const config = useConfiguration();
@@ -20,7 +20,7 @@ const App: React.FC = () => {
         dark: darkTheme,
         light: lightTheme,
         current: theme,
-        setTheme: setTheme,
+        setTheme,
       }}
     >
       <ImageConfigurationContext.Provider value={config}>
