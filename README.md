@@ -4,6 +4,8 @@ A demo user interface created with [TypeScript](https://www.typescriptlang.org/)
 
 Available at [vod-ui.demos.aarnio.dev](https://vod-ui.demos.aarnio.dev).
 
+[![Actions Status](https://github.com/sezze/demo-vod-ui/workflows/CI/CD/badge.svg)](https://github.com/sezze/demo-vod-ui/actions)
+
 ## About
 
 The project aims to be a completely production-ready grade UI for a video-on-demand service, with first-class mobile and desktop support.
