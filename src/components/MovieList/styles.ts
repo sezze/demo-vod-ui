@@ -11,6 +11,10 @@ export const ScrollContainer = styled.div`
     height: 12px;
     visibility: hidden;
     background-color: ${({ theme }) => theme.current.bg.alt};
+
+    @media (hover: none) {
+      display: none;
+    }
   }
 
   &::-webkit-scrollbar-thumb {
@@ -80,6 +84,10 @@ export const ScrollSnapButton = styled.div`
 
   &:last-child:hover {
     border-radius: 8px 50% 50% 8px;
+  }
+
+  @media (hover: none) {
+    display: none;
   }
 `;
 
