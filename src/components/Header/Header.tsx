@@ -1,7 +1,13 @@
 import React, { useCallback } from 'react';
 import { FaAdjust } from 'react-icons/fa';
 import { useTheme } from 'styled-components';
-import { Container, LeftSection, RightSection, ThemeToggle } from './styles';
+import {
+  Container,
+  LeftSection,
+  RightSection,
+  ThemeToggle,
+  DemoNote,
+} from './styles';
 
 const Header: React.FC = () => {
   const theme = useTheme();
@@ -12,6 +18,9 @@ const Header: React.FC = () => {
 
   return (
     <Container>
+      <DemoNote>
+        This page is a demo which does not provide any actual video content.
+      </DemoNote>
       <LeftSection />
       <RightSection>
         <ThemeToggle onClick={handleThemeToggle}>
