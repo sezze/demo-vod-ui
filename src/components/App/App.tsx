@@ -6,21 +6,23 @@ import StandardLayout from 'layouts/StandardLayout/StandardLayout';
 import MovieView from 'views/HomeView/MovieView';
 import { ThemeProvider } from 'styled-components';
 import useConfiguration from 'hooks/useConfiguration';
-import Theme from 'types/Theme';
 import darkTheme from 'themes/darkTheme';
 import lightTheme from 'themes/lightTheme';
+import useSystemTheme from 'hooks/useSystemTheme';
 
 const App: React.FC = () => {
   const config = useConfiguration();
-  const [theme, setTheme] = useState<Theme>(darkTheme);
+  const systemTheme = useSystemTheme(lightTheme, darkTheme);
+  const [isUsingSystemTheme, setUsingSystemTheme] = useState(true);
+  const [userTheme, setUserTheme] = useState(systemTheme);
 
   return (
     <ThemeProvider
       theme={{
         dark: darkTheme,
         light: lightTheme,
-        current: theme,
-        setTheme,
+        current: systemTheme,
+        setTheme: setUserTheme,
       }}
     >
       <ImageConfigurationContext.Provider value={config}>
